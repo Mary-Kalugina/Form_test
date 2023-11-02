@@ -1,10 +1,14 @@
-import Calendar  from './Calendar'
+import React, {useState} from 'react';
+import Forms  from './Forms';
 import './App.css';
-function App() {
+import Help from './Help';
 
-const now = new Date();
-  return (
-    <Calendar date={now} />
+function App() {
+  const [side, setSide] = useState(true)
+  return (<div className='container'>
+    {side ? <Forms toggle={setSide} /> : <Help toggle={setSide}/>}
+        
+  </div>
   );
 }
 
